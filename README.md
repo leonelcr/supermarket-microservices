@@ -10,3 +10,7 @@ Arquitectura de referencia implementada con Spring Boot 3, Java 21 y Docker.
 
 ## Infraestructura
 Ejecutar: `docker-compose -f docker-compose.infra.yml up -d`
+
+## Contacto
+Maintainer: Engineering Manager
+Email: leonelr@gmail.com
