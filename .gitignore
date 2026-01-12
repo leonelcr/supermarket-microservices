@@ -1,0 +1,30 @@
+# Compilados de Java
+target/
+*.class
+*.jar
+
+# Logs
+logs/
+*.log
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.iml
+
+# Archivos de Sistema
+.DS_Store
+Thumbs.db
+
+# Seguridad (IMPORTANTE: No subir claves)
+*.pem
+*.key
+*.p12
+*.jks
+
+# Docker volumes (si los hubiera mapeado localmente)
+postgres_data/
+mongo_data/
+
+# Spring Boot
+help.md

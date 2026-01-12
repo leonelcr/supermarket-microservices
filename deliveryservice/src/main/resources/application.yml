@@ -1,0 +1,36 @@
+server:
+  port: 8083 # Puerto diferente
+
+spring:
+  application:
+    name: delivery-service
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      type: simple
+      simple:
+        observation-enabled: true # <--- VITAL: Permite que Zipkin conecte la traza entrante
+        auto-startup: true
+        concurrency: 3 # (Opcional) Levanta 3 consumidores paralelos si hubiera mucha carga
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
+logging:
+  file:
+    name: ../logs/delivery-service.log
+  level:
+    root: INFO

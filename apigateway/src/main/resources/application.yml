@@ -1,0 +1,50 @@
+server:
+  port: 8080 # El puerto estándar de entrada
+
+spring:
+  application:
+    name: api-gateway
+  
+  cloud:
+    gateway:
+      routes:
+        # Ruta para PRODUCT-SERVICE
+        - id: product-service
+          uri: http://localhost:8081 # A dónde lo mando
+          predicates:
+            - Path=/api/products/**  # Qué URLs intercepto
+          filters:
+            - AddRequestHeader=X-Gateway-Secret, SuperSecretKey123 # <--- NUEVO: Estampa el sello
+
+        # Ruta para CART-SERVICE
+        - id: cart-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/cart/**
+          filters:
+            - AddRequestHeader=X-Gateway-Secret, SuperSecretKey123 # <--- NUEVO
+
+# Configuración de Seguridad RSA
+rsa:
+  private-key: "MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCWonO4N2iaGdrlJDKbqyhZs8VI/kHTA3IQQOnCidxbJGPrslvyURxARJhvKxnxA+pMsz/lHC+sJB1daWmt1O77gdUJphUiqj7C1XkdNGKIWbN+I2CBfaVNwZnFOR4F+Lq90B6FpXpE+UyJZpEQe+3i1KxM1NebK08KgNhxr0m2A4tnVEGTYzKcXu7n7kQmh665C9a5cA/6V6u7XXyYCJ/5IkyszxWAKO0Nk1pIOUeKAFvykJBeEj7lAAjawg6Qk9JojR5T1zpj3J6EhSDu8KVTqiX5kp20q44DELuUDmn0htiAQBiWWBe5eQfMCeiJawDJdLkvh2bwuvW7y8PWBFRzAgMBAAECggEAJSYiOMu9ace3kqw3KOnwlRK/NE20KRif8D86ByadqAKU++MsRtnXCEiCeWQdTTGkfk70kom9fgwYC9n73Il3eKJfyjXh338x5DXmXRv2st7AY/rQiY7VjhQRWrDH5TwevcIOTPJu8YSz6ezYGMMfe0HszjPtilCHeTUma/8JRDBBlAFZbdpscYXK0Tjr+Ds3Pa8sVch2q1vsYFiLX1vgdCKdgaY0A1olVGFJCd1kgO/M9MPKtj/Lw/Jzvu9VPKDHjd0qnbI/3rFOrax3A88SLIVBpFyL0rP8sQtia96Zzh+f6eqhUtDuxFP7hKmzTxWtAFCbMD85g6urgIIr06NQSQKBgQDP6/LQtRJFF0dNZqfyiMVrIgYpVNPMWKFgwAZv30aRt7ngH4k0JvTkBWiHweMadIQmJwCkEbx4SW29/cM6Hga31EIdciD+SaAE2BHMihRiknBSDRfx82vRIXY7+HYSu73C0aHbbgQvJu0e4rN6Uz4VKNa/r1lSHkHhcNMne4ND2wKBgQC5d1vPpYb5Yl6Dd0CtUokuIy0Vs8sd+hnUiFFH4eVvc8BiaR3oWzxvYEVIbcuDtfpzIZSis3SjXJ2JAIFps0L/X4+eb4umdIx0kBaYsids9vIGxf66Db05myRUxlYtiZ8iWEc/H1fJqonyvMNJEHh80SWAiiDcBErDTfZE6KBhSQKBgQC+2zkyd2Pj4/Bhjj/QE9gT9VFukx0v0JOh+eJuwqdGjz2iC5CoPLJCtOw04bcTy6yaUOb3tAgq6kxAQDX6nSFRkRd3bBH5GaA3khcUiBMaQI2146r9P5LSj0K23eWUYJ1ZvZAzmhNhLPwwg6x4Nv0f8zLdFZqKFJgo1qYc8fWWTQKBgDikMj7tT5Z0K2c9EVydm1Wi2o8JNNw32JGm/CPW4ooyMKwdbEvdKUzeeupO1duoxQ9KTymNYu7NRzNjGyLb43c4iRUa/exdJdQneS8zIYVOucXFzDCoJ4UjU2oslH8dy6LikQe/G8F0OuMOMRnsVM/R1AE4riZjjS2ubqrG3Mw5AoGBAK+2D5lswJGpq2VS3LdKkT9KhZEooTDrayNIWudb3yec2ebL5LTuJxplaAJnJfptABT/ySoewQ1+M2Q9scttlIpvayj/7d47sesOZZghwWp5JzCHUbUTyonrmj68dT4UGCY7FnAaCneRtx5J2zV3JWilokvikV1sgNIeCOrDyqse" # <--- Pega aquí el contenido de private_key.pem (una sola linea)
+  public-key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlqJzuDdomhna5SQym6soWbPFSP5B0wNyEEDpwoncWyRj67Jb8lEcQESYbysZ8QPqTLM/5RwvrCQdXWlprdTu+4HVCaYVIqo+wtV5HTRiiFmzfiNggX2lTcGZxTkeBfi6vdAehaV6RPlMiWaREHvt4tSsTNTXmytPCoDYca9JtgOLZ1RBk2MynF7u5+5EJoeuuQvWuXAP+leru118mAif+SJMrM8VgCjtDZNaSDlHigBb8pCQXhI+5QAI2sIOkJPSaI0eU9c6Y9yehIUg7vClU6ol+ZKdtKuOAxC7lA5p9IbYgEAYllgXuXkHzAnoiWsAyXS5L4dm8Lr1u8vD1gRUcwIDAQAB"  
+
+jwt:
+  expiration: 3600000 # Tiempo en milisegundos (3600000 ms = 1 hora)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, gateway
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: INFO # Para ver logs de ruteo
