@@ -88,6 +88,14 @@
 			<version>1.0.3</version>
 		</dependency>
 
+		<!-- DATA FAKER: Generación de datos de prueba realistas y aleatorios -->
+		<dependency>
+			<groupId>net.datafaker</groupId>
+			<artifactId>datafaker</artifactId>
+			<version>2.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

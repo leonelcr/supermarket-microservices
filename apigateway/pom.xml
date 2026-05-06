@@ -65,6 +65,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- WIREMOCK: Servidor HTTP simulado para tests de integración -->
+		<dependency>
+			<groupId>org.wiremock</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>3.3.1</version>
+			<scope>test</scope>
+		</dependency>
+
 		<!-- SEGURIDAD NATIVA DE SPRING (WebFlux) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -96,6 +104,14 @@
             <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
+
+		<!-- DATA FAKER: Generación de datos de prueba realistas y aleatorios -->
+		<dependency>
+			<groupId>net.datafaker</groupId>
+			<artifactId>datafaker</artifactId>
+			<version>2.4.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<!-- GESTOR DE VERSIONES DE CLOUD (BOM) -->
