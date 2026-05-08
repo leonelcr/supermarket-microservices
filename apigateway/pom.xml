@@ -65,11 +65,15 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- WIREMOCK: Servidor HTTP simulado para tests de integración -->
+		<!--
+		  WIREMOCK via Spring Cloud Contract: usa la versión gestionada por el BOM
+		  de Spring Cloud, garantizando compatibilidad con Jetty 12 / Jakarta EE 10.
+		  El artefacto spring-cloud-contract-wiremock expone la misma API pública
+		  (com.github.tomakehurst.wiremock.*) sin conflictos de classpath.
+		-->
 		<dependency>
-			<groupId>org.wiremock</groupId>
-			<artifactId>wiremock</artifactId>
-			<version>3.3.1</version>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-contract-wiremock</artifactId>
 			<scope>test</scope>
 		</dependency>
 
