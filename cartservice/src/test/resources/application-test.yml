@@ -1,0 +1,14 @@
+spring:
+  main:
+    web-application-type: none
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/supermarket_cart_test
+  rabbitmq:
+    listener:
+      auto-startup: false
+
+management:
+  tracing:
+    sampling:
+      probability: 0.0

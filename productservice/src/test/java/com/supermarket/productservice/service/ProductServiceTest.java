@@ -20,6 +20,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+// Prueba unitaria del servicio de productos. Usa Mockito para simular el repositorio
+// y comprobar las operaciones de negocio sin depender de PostgreSQL.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("ProductService - Tests Unitarios")
 class ProductServiceTest {

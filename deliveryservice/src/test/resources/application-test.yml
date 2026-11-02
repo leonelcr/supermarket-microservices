@@ -1,0 +1,11 @@
+spring:
+  main:
+    web-application-type: none
+  rabbitmq:
+    listener:
+      auto-startup: false
+
+management:
+  tracing:
+    sampling:
+      probability: 0.0

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="archify 2.17.0-dev.1">
-  <title>Arquitectura Supermarket Diagram</title>
+  <title>Supermarket – Arquitectura de Microservicios Diagram</title>
   <script>
     // Resolve the theme before first paint so light-preference users don't
     // see a dark flash. The toolbar script below re-applies with UI state.
@@ -5081,11 +5081,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
            data-preset-badge-blueprint="BLUEPRINT / REV 01"
            data-preset-badge-editorial="EDITORIAL / FIELD NOTE">
         <div class="pulse-dot"></div>
-        <h1>Arquitectura Supermarket</h1>
+        <h1>Supermarket – Arquitectura de Microservicios</h1>
       </div>
     </div>
 
-    <script id="archify-guided-views-data" type="application/json">[{"id":"request-path","label":"Flujo de solicitud","focus":["client","gateway","product","cart"],"note":"El cliente siempre pasa por el Gateway antes de llegar a los microservicios."},{"id":"product-data","label":"Datos de Product Service","focus":["product","postgres","redis"],"note":"Product Service usa PostgreSQL como fuente de verdad y Redis como cache."},{"id":"checkout-async","label":"Checkout asíncrono","focus":["cart","mongo","rabbitmq","delivery"],"note":"El checkout persiste en MongoDB y dispara un mensaje procesado de forma asíncrona por Delivery."}]</script>
+    <script id="archify-guided-views-data" type="application/json">[{"id":"fortaleza","label":"1 · La Fortaleza","focus":["user","gateway","product","cart"],"note":"Juan entra con su JWT; el Gateway valida la firma RSA y estampa X-Gateway-Secret."},{"id":"velocidad-carrito","label":"2 · Catálogo y carrito","focus":["product","redis","postgres","cart","mongo"],"note":"Redis responde antes que Postgres; Mongo guarda el carrito como documento flexible."},{"id":"fuego-hermano","label":"3 · Checkout y Gran Hermano","focus":["cart","rabbitmq","delivery","prometheus","promtail","loki","grafana","zipkin"],"note":"Checkout publica y responde al instante; Delivery consume async; todo queda trazado."}]</script>
 
     <script id="archify-i18n-data" type="application/json">{"locale":"en","messages":{"viewer.kind.frontend":"Frontend","viewer.kind.backend":"Backend","viewer.kind.database":"Database","viewer.kind.cloud":"Cloud","viewer.kind.security":"Security","viewer.kind.messagebus":"Message bus","viewer.kind.external":"External","viewer.kind.neutral":"Neutral","viewer.kind.node":"Node","viewer.kind.start":"Start","viewer.kind.active":"Active","viewer.kind.waiting":"Waiting","viewer.kind.decision":"Decision","viewer.kind.success":"Success","viewer.kind.failure":"Failure","viewer.toolbar.actions":"Diagram actions","viewer.theme.toggle.title":"Toggle theme (T)","viewer.theme.toggle":"Toggle color theme","viewer.theme.dark":"Dark","viewer.theme.light":"Light","viewer.preset.choose.title":"Choose visual style (S cycles)","viewer.preset.choose":"Choose visual style","viewer.preset.style":"Style","viewer.preset.menu":"Visual style","viewer.preset.identity":"Visual identity","viewer.preset.cycles":"S cycles","viewer.preset.classic":"Classic","viewer.preset.classic.short":"Classic","viewer.preset.classic.hint":"Stable technical default","viewer.preset.flow":"Signal Flow","viewer.preset.flow.short":"Flow","viewer.preset.flow.hint":"Motion-forward presentation","viewer.preset.blueprint":"Blueprint","viewer.preset.blueprint.hint":"Engineering review","viewer.preset.editorial":"Editorial","viewer.preset.editorial.hint":"Publication and launch notes","viewer.preset.badge.signalFlow":"SIGNAL FLOW","viewer.preset.badge.blueprint":"BLUEPRINT / REV 01","viewer.preset.badge.editorial":"EDITORIAL / FIELD NOTE","viewer.preset.badge.editorialPlate":"ARCHIFY / PLATE 04","viewer.preset.current":"Visual style: {style}. Choose visual style","viewer.motion.live":"Live","viewer.motion.still":"Still","viewer.motion.pause":"Pause motion","viewer.motion.resume":"Resume motion","viewer.motion.reduced":"Motion paused by reduced-motion preference","viewer.motion.hidden":"Motion paused while this page is hidden","viewer.motion.yielding":"Pause motion; currently yielding to {owner}","viewer.motion.yielding.title":"Live preview enabled · yielding to {owner}","viewer.owner.story":"the guided story","viewer.owner.chapter":"the active chapter","viewer.owner.chapterPreview":"the chapter delta preview","viewer.owner.handoff":"the chapter handoff","viewer.owner.route":"Route Probe","viewer.owner.lens":"Semantic Lens","viewer.owner.relationship":"Relationship Preview","viewer.owner.intent":"Intent Trace","viewer.owner.focus":"semantic focus","viewer.owner.legend":"legend preview","viewer.owner.reader":"reader interaction","viewer.present.enter":"Enter presentation stage","viewer.present.enter.title":"Presentation stage (F)","viewer.present.exit":"Exit presentation stage","viewer.present.exit.title":"Exit presentation stage (F or Escape)","viewer.present.present":"Present","viewer.present.exit.label":"Exit","viewer.export.button":"Export","viewer.export.button.title":"Export diagram (E)","viewer.export.diagram":"Export diagram","viewer.export.menu":"Export","viewer.export.subtitle":"Portable, clean outputs","viewer.export.share":"Share","viewer.export.shareCard":"Share Card","viewer.export.routeShareCard":"Route Share Card","viewer.export.reachShareCard":"Reach Share Card","viewer.export.copyShareCard":"Copy Share Card","viewer.export.copyDiagram":"Copy diagram","viewer.export.clipboardPng":"PNG to clipboard","viewer.export.raster":"Raster images","viewer.export.image":"Image","viewer.export.lossless":"Lossless image","viewer.export.compact":"Compact image","viewer.export.modern":"Modern image","viewer.export.vectorMotion":"Vector and motion","viewer.export.vectorMotion.heading":"Vector \u0026 motion","viewer.export.editable":"Editable vector","viewer.export.motion6s":"6s motion","viewer.export.unsupported":"Not supported by this browser","viewer.export.clipboardUnsupported":"Clipboard image write not supported by this browser","viewer.export.clipboardUnsupported.period":"Clipboard image write not supported by this browser.","viewer.export.clipboardUnsupported.short":"Clipboard image write not supported in this browser.","viewer.export.motionUnavailable":"Motion capture unavailable in this browser","viewer.export.webmUnavailable":"WebM unavailable in this browser","viewer.export.failed":"Export failed: {message}","viewer.export.unknownVariant":"Unknown Share Card variant: {variant}","viewer.export.routeRequired":"Trace a route before exporting a Route Share Card","viewer.export.reachRequired":"Trace authored reach before exporting a Reach Share Card","viewer.export.unknown":"unknown","viewer.export.routeFailed":"Route Share Card export failed: {message}","viewer.export.reachFailed":"Reach Share Card export failed: {message}","viewer.export.copyFailed":"Copy failed: {message}","viewer.export.copiedPng":"Copied PNG to clipboard","viewer.export.copiedShare":"Copied Share Card","viewer.export.downloadedShare":"Downloaded Share Card","viewer.export.downloadedRoute":"Downloaded Route Share Card","viewer.export.downloadedReach":"Downloaded Reach Share Card","viewer.export.downloadedWebm":"Downloaded WebM","viewer.export.recording":"Recording 6 seconds of motion…","viewer.export.card.routeSummary.one":"Route: {source} → {target} · {count} directed hop","viewer.export.card.routeSummary.other":"Route: {source} → {target} · {count} directed hops","viewer.export.card.reachSummary":"Authored {direction} from {origin} · {nodes} · {links} · max {hops}","viewer.export.card.node.one":"{count} node","viewer.export.card.node.other":"{count} nodes","viewer.export.card.link.one":"{count} link","viewer.export.card.link.other":"{count} links","viewer.export.card.hop.one":"{count} hop","viewer.export.card.hop.other":"{count} hops","viewer.export.card.routeBadge":"ARCHIFY · ROUTE · {hops}","viewer.export.card.reachBadge":"ARCHIFY · {direction} REACH","viewer.export.card.defaultBadge":"ARCHIFY · {preset} · {theme}","viewer.export.direction.upstream":"Upstream","viewer.export.direction.downstream":"Downstream","viewer.export.error.canvasUnavailable":"Canvas unavailable for {label}","viewer.export.error.contextUnavailable":"2D canvas context unavailable for {label}","viewer.export.error.toBlobUnavailable":"canvas.toBlob unavailable for {label}","viewer.export.error.toBlobNull":"canvas.toBlob returned no data for {label}","viewer.export.error.variantsCombined":"Share Card variants cannot be combined","viewer.export.error.viewerState":"Share Card export could not remove temporary viewer state","viewer.export.error.routeState":"Route Card export could not preserve the resolved route safely","viewer.export.error.reachState":"Reach Card export could not preserve authored reach safely","viewer.export.error.webmRequirements":"WebM motion export requires a trace animation and browser MediaRecorder support","viewer.export.error.mediaRecorder":"MediaRecorder failed","viewer.export.error.emptyWebm":"MediaRecorder produced an empty WebM","viewer.export.error.webmBackground":"SVG background could not be loaded for WebM export","viewer.guided.region":"Guided diagram views","viewer.guided.previous":"Previous guided view","viewer.guided.previous.title":"Previous guided view ([)","viewer.guided.next":"Next guided view","viewer.guided.next.title":"Next guided view (])","viewer.guided.views":"Guided views","viewer.guided.explore":"Explore this system","viewer.guided.intro":"Step through curated paths without changing the source diagram.","viewer.guided.trail":"Story trail","viewer.guided.beat":"Beat","viewer.guided.nextBeat":"Next","viewer.guided.play":"Play guided story","viewer.guided.play.title":"Play guided story (P)","viewer.guided.pause":"Pause guided story","viewer.guided.pause.title":"Pause guided story (P)","viewer.guided.replay":"Replay guided story","viewer.guided.replay.title":"Replay guided story (P)","viewer.guided.playStory":"Play story","viewer.guided.pauseStory":"Pause","viewer.guided.replayStory":"Replay story","viewer.guided.motionUnavailable":"Story playback unavailable while motion is Still","viewer.guided.enableMotion":"Switch motion to Live to play the guided story","viewer.guided.selectBeatLink":"Select a Story Beat to copy its exact link","viewer.guided.copyMoment":"Copy moment","viewer.guided.momentCopied":"Moment link copied","viewer.guided.momentCopyFailed":"Could not copy story moment link","viewer.guided.copied":"Copied","viewer.guided.copyFailed":"Copy failed","viewer.guided.showAll":"Show all","viewer.guided.showAll.aria":"Show entire diagram","viewer.guided.chapters":"Story chapters","viewer.guided.storyTrail":"Story trail for {label}: {count} beats","viewer.guided.chapter.open":"Open chapter {index} of {total}: {label}, {count} stops","viewer.guided.chapter.current":"Current chapter {index} of {total}: {label}, {count} stops","viewer.guided.chapter.selectedNodes":"{count} selected nodes","viewer.guided.chapter.stops":"{count} stops","viewer.guided.chapter.stop.one":"{count} stop","viewer.guided.chapter.stop.other":"{count} stops","viewer.guided.chapter.current.title":"{label} — current chapter, {count} stops","viewer.guided.chapter.delta.expanded":"{stay} stay, {enter} enter, {leave} leave","viewer.guided.chapter.delta.aria":"Open chapter {index} of {total}: {label}. Chapter focus delta: {delta}","viewer.guided.chapter.delta.title":"{label} — {delta} chapter focus","viewer.guided.handoff":"{from} → {to} · via {label}","viewer.guided.share.chapter":"Chapter {index} / {total}","viewer.guided.share.initial":"Chapter 01 / 01","viewer.guided.share.default":"Guided chapter","viewer.guided.state.ready":"Ready","viewer.guided.state.playing":"Playing","viewer.guided.state.settled":"Settled","viewer.guided.state.paused":"Paused","viewer.guided.state.pinned":"Pinned","viewer.guided.state.still":"Still","viewer.guided.share.step":"Step {index} / {total} · {label}","viewer.guided.share.staticMoment":"{step} · Static moment","viewer.guided.share.complete":"{count} steps complete · {note}","viewer.guided.share.settled":"Path settled for reading.","viewer.guided.share.staticPath":"{count} steps · Static path","viewer.guided.share.ready":"{count} steps · Ready","viewer.guided.share.aria":"{state} chapter {index} of {total}: {label}. {beat}. {route}","viewer.guided.beat.start":"Beat {index} / {total} · {label} · starting point","viewer.guided.beat.forward":"Beat {index} / {total} · {from} → {to}","viewer.guided.beat.reverse":"Beat {index} / {total} · {from} → {to} · reverse authored link","viewer.guided.beat.multiple":"Beat {index} / {total} · {from} ⇄ {to} · {count} authored links","viewer.guided.beat.group":"Beat {index} / {total} · {from} · {to} · grouped · no direct link","viewer.guided.beat.aria.prefix":"Story beat {index} of {total}: {label}. ","viewer.guided.beat.aria.start":"Starting point.","viewer.guided.beat.aria.forward":"From {from} through one authored forward relationship.","viewer.guided.beat.aria.reverse":"From {from}; the authored relationship points from {to} to {from}.","viewer.guided.beat.aria.multiple":"From {from} through {count} authored relationships; shown without arbitrary motion.","viewer.guided.beat.aria.group":"Grouped from {from} with no direct authored relationship.","viewer.guided.caption.start":"Starting point","viewer.guided.caption.grouped":"Grouped transition · no direct authored link","viewer.guided.caption.more":" +{count} more","viewer.guided.caption.reverse":"Reverse authored relationship","viewer.guided.caption.relationships":"{count} authored relationships","viewer.guided.caption.relationship":"Authored relationship","viewer.guided.caption.direction":"authored direction: {from} → {to}","viewer.guided.caption.starting":"Authored starting point","viewer.guided.beatLink":"Copy link to current story moment: Beat {index} of {total}: {label}","viewer.guided.noStory":"This diagram has no authored guided story.","viewer.guide.eyebrow":"Diagram guide","viewer.guide.close":"Close diagram guide","viewer.guide.inspecting":"Inspecting compiled semantics","viewer.guide.actions":"Diagram exploration actions","viewer.guide.find":"Find any node","viewer.guide.find.hint":"Search labels, responsibilities, kinds, and stable IDs.","viewer.guide.route":"Trace a route","viewer.guide.route.aria":"Trace a directed route","viewer.guide.route.hint":"Ask how two semantic nodes connect in authored direction.","viewer.guide.map":"See the whole system","viewer.guide.map.hint":"Open Semantic Radar with a live viewport and stable nodes.","viewer.guide.lens":"Compare semantic kinds","viewer.guide.lens.hint":"Count roles, reveal their traffic, and compare direct authored links.","viewer.guide.story":"Play the guided story","viewer.guide.story.hint":"Walk the authored chapters and real relationships.","viewer.guide.present":"Enter Presentation Stage","viewer.guide.present.hint":"Give the live diagram the viewport without changing export.","viewer.guide.shortcuts":"Additional keyboard shortcuts","viewer.guide.shortcut.export":"Export","viewer.guide.shortcut.theme":"Theme","viewer.guide.shortcut.style":"Style","viewer.guide.shortcut.reset":"Reset","viewer.guide.shortcut.zoomIn":"Zoom in","viewer.guide.shortcut.zoomOut":"Zoom out","viewer.guide.shortcut.close":"Close","viewer.guide.facts":"{nodes} · {relationships} · {views}","viewer.guide.fact.node.one":"{count} semantic node","viewer.guide.fact.node.other":"{count} semantic nodes","viewer.guide.fact.relationship.one":"{count} relationship","viewer.guide.fact.relationship.other":"{count} relationships","viewer.guide.fact.view.one":"{count} guided view","viewer.guide.fact.view.other":"{count} guided views","viewer.guide.story.available.one":"Walk {count} authored chapter and its real relationships.","viewer.guide.story.available.other":"Walk {count} authored chapters and their real relationships.","viewer.guide.story.unavailable":"No authored guided story in this diagram.","viewer.guide.open":"Open diagram guide","viewer.guide.noStory":"This diagram has no authored guided story.","viewer.finder.title":"Find a node","viewer.finder.close":"Close node finder","viewer.finder.placeholder":"Search labels or IDs","viewer.finder.search":"Search diagram nodes","viewer.finder.results":"Diagram nodes","viewer.finder.empty":"No matching nodes","viewer.finder.result.focus":"Focus {label}","viewer.finder.result.routeStart":"Choose {label} as route start","viewer.finder.result.routeTarget":"Choose {label} as route destination, {links}","viewer.finder.status.empty":"No matching nodes","viewer.finder.status.count.one":"{count} matching node","viewer.finder.status.count.other":"{count} matching nodes","viewer.finder.noun.nodes":"nodes","viewer.finder.link.one":"{count} link","viewer.finder.link.other":"{count} links","viewer.finder.result.focus.one":"Focus {label}, {count} related connection","viewer.finder.result.focus.other":"Focus {label}, {count} related connections","viewer.finder.status.filtered":"{visible} of {available} {noun}","viewer.finder.status.all":"{available} {noun}","viewer.passport.eyebrow":"Semantic passport","viewer.passport.metadata":"Node metadata","viewer.passport.evidence":"Verified source evidence","viewer.passport.verified":"Verified source","viewer.passport.verificationScope":"Verified against local Git at the pinned revision. Remote access has not been checked.","viewer.passport.reach":"Authored reach","viewer.passport.reach.trace":"Trace authored reachability","viewer.passport.upstream":"Upstream","viewer.passport.downstream":"Downstream","viewer.passport.upstream.trace":"Trace upstream authored reachability","viewer.passport.downstream.trace":"Trace downstream authored reachability","viewer.passport.close":"Close semantic passport","viewer.passport.copy":"Copy link","viewer.passport.copy.focus":"Copy link to focused node","viewer.passport.relations":"Relations","viewer.passport.relations.show":"Show connected relationships","viewer.passport.relations.hide":"Hide connected relationships","viewer.passport.relations.list":"Connected relationships","viewer.passport.copyRelation":"Copy relation","viewer.passport.copyNode":"Copy node","viewer.passport.copyPinned":"Copy link to pinned relationship","viewer.passport.copySource":"Copy link to source node","viewer.passport.copy.focused.success":"Focused node link copied","viewer.passport.copy.pinned.success":"Pinned relationship link copied","viewer.passport.copy.focused.failed":"Could not copy focused node link","viewer.passport.copy.pinned.failed":"Could not copy pinned relationship link","viewer.passport.relationship.none":"No connected relationships","viewer.passport.relationship.count.one":"{count} relation","viewer.passport.relationship.count.other":"{count} relations","viewer.passport.relationship.show.one":"Show {count} connected relationship","viewer.passport.relationship.show.other":"Show {count} connected relationships","viewer.passport.relationship.summary":"{out} outgoing · {in} incoming{loops}","viewer.passport.relationship.loops":" · {count} loop","viewer.passport.relationship.explorer":"Direct relationship explorer","viewer.passport.relationship.help":"Use arrow keys to explore relationships. Press Enter or Space to pin details; Escape clears.","viewer.passport.relationship.loopsBack":"loops back","viewer.passport.relationship.connectsTo":"connects to","viewer.passport.relationship.connectsFrom":"connects from","viewer.passport.relationship.pinned":"Pinned relationship · {from} → {to} · {label}","viewer.passport.relationship.inspect":"Inspect relationship {index} of {total}: {from} to {to}, {label}. Press Enter for details.","viewer.passport.relationship.group.out":"Outgoing","viewer.passport.relationship.group.in":"Incoming","viewer.passport.relationship.group.loop":"Self loops","viewer.passport.relationship.row":"{group}: {relationship}, {neighbor}","viewer.passport.relationship.direction.out":"OUT →","viewer.passport.relationship.direction.in":"← IN","viewer.passport.relationship.direction.loop":"LOOP","viewer.passport.sourceCount.one":"{count} verified source reference","viewer.passport.sourceCount.other":"{count} verified source references","viewer.passport.sourceMarker":"SRC","viewer.passport.beacon.one":"{count} verified source; focus this node to inspect","viewer.passport.beacon.other":"{count} verified sources; focus this node to inspect","viewer.passport.repository.open":"Open verified repository revision {revision}","viewer.passport.source.open":"Open verified source {path} at revision {revision}","viewer.passport.source.openLink":"Open ↗","viewer.passport.reach.upstream.one":"Trace {count} upstream authored node","viewer.passport.reach.upstream.other":"Trace {count} upstream authored nodes","viewer.passport.reach.downstream.one":"Trace {count} downstream authored node","viewer.passport.reach.downstream.other":"Trace {count} downstream authored nodes","viewer.passport.reach.noUpstream":"No upstream authored nodes","viewer.passport.reach.noDownstream":"No downstream authored nodes","viewer.passport.reach.status":"{direction} · {nodes} nodes · {links} links · max {hops} hops","viewer.route.eyebrow":"Route probe","viewer.route.start":"Choose a start node","viewer.route.start.find":"Find start","viewer.route.start.find.aria":"Find a route start","viewer.route.copy":"Copy link","viewer.route.copy.aria":"Copy link to traced route","viewer.route.clear":"Clear","viewer.route.clear.aria":"Clear route probe","viewer.route.traced":"Traced route","viewer.route.pickTwo":"Pick two semantic nodes on the diagram","viewer.route.pickOne":"Pick a semantic node on the diagram","viewer.route.controls":"Route journey controls","viewer.route.previous":"Previous route position","viewer.route.play":"Play route journey","viewer.route.pause":"Pause route journey","viewer.route.replay":"Replay route journey","viewer.route.next":"Next route position","viewer.route.journey":"Journey","viewer.route.pause.label":"Pause","viewer.route.replay.label":"Replay","viewer.route.overview":"Overview","viewer.route.overview.aria":"Show complete route overview","viewer.route.instructions":"Choose the source, then the destination. Direction matters.","viewer.route.destination":"Choose a destination from {label}","viewer.route.destination.find":"Find target","viewer.route.destination.find.aria":"Find a reachable route destination","viewer.route.differentDestination":"Choose a different destination","viewer.route.distinct":"A route needs two distinct semantic nodes.","viewer.route.unreachable":"No directed route to {label}","viewer.route.unreachable.detail":"{target} is not reachable from {source}. Pick a highlighted destination.","viewer.route.start.instructions":"Select the source. The next step will reveal only directed destinations.","viewer.route.copy.success":"Traced route link copied","viewer.route.copy.failed":"Could not copy traced route link","viewer.route.position":"Route position {index} of {total}: {label}","viewer.route.step":"Step {index} of {total} · {phase} · {label}","viewer.route.motionRequired":"Automatic journey requires Live motion","viewer.route.trigger.clear":"Clear traced route","viewer.route.overview.status":"{nodes} · {hops} · shortest authored route","viewer.route.overview.node.one":"{count} node","viewer.route.overview.node.other":"{count} nodes","viewer.route.overview.hop.one":"{count} directed hop","viewer.route.overview.hop.other":"{count} directed hops","viewer.route.phase.playing":"Playing","viewer.route.phase.complete":"Complete","viewer.route.phase.inspecting":"Inspecting","viewer.route.destination.count.one":"{count} directed destination available. Pick a highlighted node.","viewer.route.destination.count.other":"{count} directed destinations available. Pick a highlighted node.","viewer.route.noOutgoing":"No outgoing route starts here. Clear and choose another source.","viewer.route.result.title":"{source} to {target}","viewer.route.finder.source.title":"Choose route start","viewer.route.finder.source.placeholder":"Search route sources","viewer.route.finder.source.empty":"No matching route sources","viewer.route.finder.source.results":"Nodes that can start a route","viewer.route.finder.source.noun":"route sources","viewer.route.finder.source.badge":"start","viewer.route.finder.target.title":"Destination from {label}","viewer.route.finder.target.placeholder":"Search reachable destinations","viewer.route.finder.target.empty":"No matching reachable destinations","viewer.route.finder.target.results":"Reachable route destinations","viewer.route.finder.target.noun":"reachable destinations","viewer.route.hop.one":"{count} hop","viewer.route.hop.other":"{count} hops","viewer.lens.eyebrow":"Semantic lens","viewer.lens.title":"Compare system roles","viewer.lens.close":"Close semantic lens","viewer.lens.instruction":"Choose up to two semantic kinds. One reveals its real traffic; two compare only direct authored relationships.","viewer.lens.kinds":"Semantic kinds","viewer.lens.choose":"Choose a kind to inspect its nodes and touching relationships.","viewer.lens.copy":"Copy link to semantic lens","viewer.lens.clear":"Clear semantic lens","viewer.lens.open":"Open semantic lens","viewer.lens.openActive":"Open active semantic lens","viewer.lens.legend":"Semantic legend","viewer.lens.legend.inspect.one":"Inspect {label}, {count} node","viewer.lens.legend.inspect.other":"Inspect {label}, {count} nodes","viewer.lens.kind.count.one":"{label}, {count} node","viewer.lens.kind.count.other":"{label}, {count} nodes","viewer.lens.compare.one":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationship","viewer.lens.compare.other":"{first} → {second}: {forward} · {second} → {first}: {reverse} · {count} direct relationships","viewer.lens.single":"{nodes} · {relationships} · connected peers remain visible","viewer.lens.node.one":"{count} {label} node","viewer.lens.node.other":"{count} {label} nodes","viewer.lens.relationship.one":"{count} touching relationship","viewer.lens.relationship.other":"{count} touching relationships","viewer.radar.title":"Semantic radar","viewer.radar.building":"Building overview","viewer.radar.openFull":"Open full semantic radar","viewer.radar.open":"Open radar","viewer.radar.close":"Close semantic radar","viewer.radar.surface":"Diagram overview. Click a node to focus it, or use arrow keys to pan.","viewer.radar.click":"Click node","viewer.radar.drag":"Drag to pan","viewer.radar.space":"Semantic radar needs more MAP space.","viewer.radar.nodes":"Semantic diagram radar nodes","viewer.radar.focus":"Focus {label} from Semantic Radar","viewer.radar.status":"{count} nodes · {viewport}","viewer.radar.fullMap":"{count} nodes · full map","viewer.radar.compacted":"Radar compacted to avoid covering the Semantic Passport or MAP controls.","viewer.radar.cancelWaiting":"Cancel semantic radar waiting for more MAP space","viewer.radar.needsSpace":"Semantic radar needs more visible MAP space","viewer.radar.viewport.full":"full map","viewer.radar.viewport.width":"{percent}% width","viewer.radar.viewport.scale":"{percent}% viewport","viewer.nav.controls":"Diagram view controls","viewer.nav.route":"Trace a directed route","viewer.nav.route.title":"Trace route (R)","viewer.nav.route.short":"PATH","viewer.nav.radar":"Open semantic radar","viewer.nav.radar.title":"Semantic radar (M)","viewer.nav.radar.short":"MAP","viewer.nav.lens":"Open semantic lens","viewer.nav.lens.title":"Semantic lens (L)","viewer.nav.lens.short":"LENS","viewer.nav.find":"Find a node","viewer.nav.find.title":"Find a node (/)","viewer.nav.guide":"Open diagram guide","viewer.nav.guide.title":"Diagram guide (?)","viewer.nav.zoomOut":"Zoom out","viewer.nav.zoomOut.title":"Zoom out (-)","viewer.nav.reset":"Reset diagram view","viewer.nav.reset.title":"Reset view (0)","viewer.nav.read":"READ","viewer.nav.zoomIn":"Zoom in","viewer.nav.zoomIn.title":"Zoom in (+)","viewer.nav.camera":"{hint}. Reset diagram view","viewer.nav.camera.title":"{semantic}{hint} · reset view (0)","viewer.nav.camera.semantic":"Semantic camera active · ","viewer.nav.level.map":"MAP","viewer.nav.level.read":"READ","viewer.nav.level.full":"FULL","viewer.nav.level.auto":"AUTO","viewer.nav.detail.map":"Zoom in to reveal relationship labels and node context","viewer.nav.detail.read":"Zoom in again to reveal tags and annotations","viewer.nav.detail.full":"Full diagram detail","viewer.intent.summary":"{label}. {out} outgoing, {in} incoming{loops}. {total} connections. Press Enter for details.","viewer.intent.loops":", {count} self loop","viewer.common.copied":"Copied","viewer.common.copyFailed":"Copy failed","viewer.common.copyLink":"Copy link","viewer.common.clear":"Clear","viewer.common.close":"Close"}}</script>
     <div class="guided-views no-print" id="guided-views" hidden aria-label="Guided diagram views">
@@ -5130,8 +5130,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1210 632" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-preset="classic" data-quality-profile="showcase">
-        <title id="archify-diagram-title">Arquitectura Supermarket</title>
+      <svg viewBox="0 0 1364 578" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-preset="classic" data-quality-profile="showcase">
+        <title id="archify-diagram-title">Supermarket – Arquitectura de Microservicios</title>
         <desc id="archify-diagram-description">An architecture diagram generated by Archify.</desc>
         <!-- Definitions -->
         <defs>
@@ -5156,189 +5156,278 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="security-group" data-composition-frame-id="0" data-composition-frame-label="GatewayAccessFilter: requiere X-Gateway-Secret" x="463.2709539419355" y="66" width="233.45809211612905" height="448" rx="8" class="c-security-group" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="security-group" data-composition-frame-id="0" data-composition-frame-label="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" x="316" y="16" width="1008" height="360" rx="8" class="c-security-group" stroke-width="1"/>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="Observabilidad" x="339" y="416" width="917" height="94" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
-        <path data-edge-from="client" data-edge-to="gateway" data-edge-label="HTTPS" data-edge-key="0" data-edge-id="client-gateway" data-composition-points="170,290;240,290" d="M 170 290 L 240 290" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="gateway" data-edge-to="product" data-edge-label="/api/products/**" data-edge-key="1" data-edge-id="gateway-product" data-composition-points="330,258;330,234;476,234;476,122;500,122" d="M 330 258 L 330 242 Q 330 234 338 234 L 468 234 Q 476 234 476 226 L 476 130 Q 476 122 484 122 L 500 122" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="gateway" data-edge-to="cart" data-edge-label="/api/cart/**" data-edge-key="2" data-edge-id="gateway-cart" data-composition-points="330,328;330,352;476,352;476,462;500,462" d="M 330 328 L 330 344 Q 330 352 338 352 L 468 352 Q 476 352 476 360 L 476 454 Q 476 462 484 462 L 500 462" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="product" data-edge-to="postgres" data-edge-label="JPA" data-edge-key="3" data-edge-id="product-postgres" data-composition-points="660,115;710,115;710,50;760,50" d="M 660 115 L 702 115 Q 710 115 710 107 L 710 58 Q 710 50 718 50 L 760 50" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="product" data-edge-to="redis" data-edge-label="cache 10 min" data-edge-key="4" data-edge-id="product-redis" data-composition-points="660,129;710,129;710,180;760,180" d="M 660 129 L 702 129 Q 710 129 710 137 L 710 172 Q 710 180 718 180 L 760 180" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="cart" data-edge-to="mongo" data-edge-label="Spring Data MongoDB" data-edge-key="5" data-edge-id="cart-mongo" data-composition-points="660,455;710,455;710,390;760,390" d="M 660 455 L 702 455 Q 710 455 710 447 L 710 398 Q 710 390 718 390 L 760 390" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="cart" data-edge-to="rabbitmq" data-edge-label="publish · checkout" data-edge-key="6" data-edge-id="cart-rabbitmq" data-composition-points="660,469;710,469;710,530;760,530" d="M 660 469 L 702 469 Q 710 469 710 477 L 710 522 Q 710 530 718 530 L 760 530" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="rabbitmq" data-edge-to="delivery" data-edge-label="consume · 3 listeners" data-edge-key="7" data-edge-id="rabbitmq-delivery" data-composition-points="910,530;1000,530" d="M 910 530 L 1000 530" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="user" data-edge-to="gateway" data-edge-label="1. POST /auth/login" data-edge-key="0" data-composition-points="80,130;80,106;415,106;415,150" d="M 80 130 L 80 114 Q 80 106 88 106 L 407 106 Q 415 106 415 114 L 415 150" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="gateway" data-edge-to="user" data-edge-label="Access token (5 min, JSON) + refresh cookie (7d, HttpOnly)" data-edge-key="1" data-composition-points="415,216;415,240;80,240;80,186" d="M 415 216 L 415 232 Q 415 240 407 240 L 88 240 Q 80 240 80 232 L 80 186" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="user" data-edge-to="gateway" data-edge-label="2. Bearer access token" data-edge-key="2" data-composition-points="140,158;240,158;240,183;340,183" d="M 140 158 L 232 158 Q 240 158 240 166 L 240 175 Q 240 183 248 183 L 340 183" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="gateway" data-edge-to="product" data-edge-label="3. Valida RSA + agrega X-Gateway-Secret" data-edge-key="3" data-composition-points="490,176;565,176;565,68;640,68" d="M 490 176 L 557 176 Q 565 176 565 168 L 565 76 Q 565 68 573 68 L 640 68" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path data-edge-from="gateway" data-edge-to="cart" data-edge-label="3. Valida RSA + agrega X-Gateway-Secret" data-edge-key="4" data-composition-points="490,190;565,190;565,288;640,288" d="M 490 190 L 557 190 Q 565 190 565 198 L 565 280 Q 565 288 573 288 L 640 288" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path data-edge-from="product" data-edge-to="redis" data-edge-label="cache-aside · TTL 10 min" data-edge-key="5" data-composition-points="790,68;845,68;845,131;900,131" d="M 790 68 L 837 68 Q 845 68 845 76 L 845 123 Q 845 131 853 131 L 900 131" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="product" data-edge-to="postgres" data-edge-label="JPA persist" data-edge-key="6" data-composition-points="790,68;900,68" d="M 790 68 L 900 68" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="cart" data-edge-to="mongo" data-edge-label="persiste documento" data-edge-key="7" data-composition-points="790,288;845,288;845,265;900,265" d="M 790 288 L 837 288 Q 845 288 845 280 L 845 273 Q 845 265 853 265 L 900 265" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="cart" data-edge-to="rabbitmq" data-edge-label="4. publish → orders-queue" data-edge-key="8" data-composition-points="790,288;845,288;845,331;900,331" d="M 790 288 L 837 288 Q 845 288 845 296 L 845 323 Q 845 331 853 331 L 900 331" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="rabbitmq" data-edge-to="delivery" data-edge-label="5. consume async · 3 workers" data-edge-key="9" data-composition-points="1020,331;1080,331;1080,288;1140,288" d="M 1020 331 L 1072 331 Q 1080 331 1080 323 L 1080 296 Q 1080 288 1088 288 L 1140 288" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="prometheus" data-edge-to="gateway" data-edge-label="scrape /actuator/prometheus (los 4 servicios)" data-edge-key="10" data-composition-points="415,440;415,216" d="M 415 440 L 415 216" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="cart" data-edge-to="promtail" data-edge-label="logs JSON (los 4 servicios)" data-edge-key="11" data-composition-points="715,316;715,340;784,340;784,458;760,458" d="M 715 316 L 715 332 Q 715 340 723 340 L 776 340 Q 784 340 784 348 L 784 450 Q 784 458 776 458 L 760 458" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="delivery" data-edge-to="zipkin" data-edge-label="trace spans · 100% sampling (los 4 servicios)" data-edge-key="12" data-composition-points="1220,316;1220,378;1190,378;1190,440" d="M 1220 316 L 1220 370 Q 1220 378 1212 378 L 1198 378 Q 1190 378 1190 386 L 1190 440" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="promtail" data-edge-to="loki" data-edge-key="13" data-composition-points="760,472;840,472" d="M 760 472 L 840 472" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="loki" data-edge-to="grafana" data-edge-key="14" data-composition-points="940,465;980,465" d="M 940 465 L 980 465" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
 
         <!-- Components -->
-        <g id="node-client" data-node-id="client" data-node-label="Cliente" tabindex="0" role="button" aria-label="Focus Cliente, Browser / App, Architecture component" aria-pressed="false" data-node-kind="external" data-node-sublabel="Browser / App" data-node-context="Architecture component">
-          <title>Cliente · Browser / App · Architecture component</title>
-          <rect x="40" y="260" width="130" height="60" rx="6" class="c-mask"/>
-          <rect x="40" y="260" width="130" height="60" rx="6" class="c-external" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(46 266) scale(0.6875)">
+        <g id="node-user" data-node-id="user" data-node-label="Usuario / Postman" tabindex="0" role="button" aria-label="Focus Usuario / Postman, Architecture component" aria-pressed="false" data-node-kind="external" data-node-context="Architecture component">
+          <title>Usuario / Postman · Architecture component</title>
+          <rect x="20" y="130" width="120" height="56" rx="6" class="c-mask"/>
+          <rect x="20" y="130" width="120" height="56" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(26 136) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="105" y="288" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Cliente</text>
-        <text data-detail="context" x="105" y="304" class="t-muted" font-size="9" text-anchor="middle">Browser / App</text>
+          <text data-node-label="" x="80" y="162" class="t-primary" font-size="10.9" font-weight="600" text-anchor="middle">Usuario / Postman</text>
         </g>
 
-        <g id="node-gateway" data-node-id="gateway" data-node-label="API Gateway" tabindex="0" role="button" aria-label="Focus API Gateway, Spring Cloud Gateway :8080, Architecture component" aria-pressed="false" data-node-kind="security" data-node-sublabel="Spring Cloud Gateway :8080" data-node-tag="JWT RSA + X-Gateway-Secret" data-node-context="Architecture component">
-          <title>API Gateway · Spring Cloud Gateway :8080 · Architecture component · JWT RSA + X-Gateway-Secret</title>
-          <rect x="240" y="258" width="180" height="70" rx="6" class="c-mask"/>
-          <rect x="240" y="258" width="180" height="70" rx="6" class="c-security" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(246 264) scale(0.6875)">
+        <g id="node-gateway" data-node-id="gateway" data-node-label="API Gateway" tabindex="0" role="button" aria-label="Focus API Gateway, 8080 · JWT RSA, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="security" data-node-sublabel="8080 · JWT RSA" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>API Gateway · 8080 · JWT RSA · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="340" y="150" width="150" height="66" rx="6" class="c-mask"/>
+          <rect x="340" y="150" width="150" height="66" rx="6" class="c-security" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(346 156) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="330" y="291" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">API Gateway</text>
-        <text data-detail="context" x="330" y="307" class="t-muted" font-size="9" text-anchor="middle">Spring Cloud Gateway :8080</text>
-        <text data-detail="fine" x="330" y="320" class="t-security" font-size="7" text-anchor="middle">JWT RSA + X-Gateway-Secret</text>
+          <text data-node-label="" data-detail-anchor="" x="415" y="181" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">API Gateway</text>
+        <text data-detail="context" x="415" y="197" class="t-muted" font-size="9" text-anchor="middle">8080 · JWT RSA</text>
         </g>
 
-        <g id="node-product" data-node-id="product" data-node-label="Product Service" tabindex="0" role="button" aria-label="Focus Product Service, :8081, GatewayAccessFilter: requiere X-Gateway-Secret" aria-pressed="false" data-node-kind="backend" data-node-sublabel=":8081" data-node-context="GatewayAccessFilter: requiere X-Gateway-Secret">
-          <title>Product Service · :8081 · GatewayAccessFilter: requiere X-Gateway-Secret</title>
-          <rect x="500" y="90" width="160" height="64" rx="6" class="c-mask"/>
-          <rect x="500" y="90" width="160" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506 96) scale(0.6875)">
+        <g id="node-product" data-node-id="product" data-node-label="Product Service" tabindex="0" role="button" aria-label="Focus Product Service, 8081, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="8081" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>Product Service · 8081 · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="640" y="40" width="150" height="56" rx="6" class="c-mask"/>
+          <rect x="640" y="40" width="150" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(646 46) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="120" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Product Service</text>
-        <text data-detail="context" x="580" y="136" class="t-muted" font-size="9" text-anchor="middle">:8081</text>
+          <text data-node-label="" data-detail-anchor="" x="715" y="66" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Product Service</text>
+        <text data-detail="context" x="715" y="82" class="t-muted" font-size="9" text-anchor="middle">8081</text>
         </g>
 
-        <g id="node-cart" data-node-id="cart" data-node-label="Cart Service" tabindex="0" role="button" aria-label="Focus Cart Service, :8082, GatewayAccessFilter: requiere X-Gateway-Secret" aria-pressed="false" data-node-kind="backend" data-node-sublabel=":8082" data-node-context="GatewayAccessFilter: requiere X-Gateway-Secret">
-          <title>Cart Service · :8082 · GatewayAccessFilter: requiere X-Gateway-Secret</title>
-          <rect x="500" y="430" width="160" height="64" rx="6" class="c-mask"/>
-          <rect x="500" y="430" width="160" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(506 436) scale(0.6875)">
+        <g id="node-postgres" data-node-id="postgres" data-node-label="PostgreSQL" tabindex="0" role="button" aria-label="Focus PostgreSQL, mi_db, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="database" data-node-sublabel="mi_db" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>PostgreSQL · mi_db · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="900" y="40" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="900" y="40" width="120" height="50" rx="6" class="c-database" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(906 46) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="960" y="63" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">PostgreSQL</text>
+        <text data-detail="context" x="960" y="79" class="t-muted" font-size="9" text-anchor="middle">mi_db</text>
+        </g>
+
+        <g id="node-redis" data-node-id="redis" data-node-label="Redis" tabindex="0" role="button" aria-label="Focus Redis, cache-aside, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="database" data-node-sublabel="cache-aside" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>Redis · cache-aside · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="900" y="106" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="900" y="106" width="120" height="50" rx="6" class="c-database" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(906 112) scale(0.6875)">
+            <ellipse cx="8" cy="4" rx="5" ry="2"/>
+            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="960" y="129" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Redis</text>
+        <text data-detail="context" x="960" y="145" class="t-muted" font-size="9" text-anchor="middle">cache-aside</text>
+        </g>
+
+        <g id="node-cart" data-node-id="cart" data-node-label="Cart Service" tabindex="0" role="button" aria-label="Focus Cart Service, 8082, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="8082" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>Cart Service · 8082 · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="640" y="260" width="150" height="56" rx="6" class="c-mask"/>
+          <rect x="640" y="260" width="150" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(646 266) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="460" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Cart Service</text>
-        <text data-detail="context" x="580" y="476" class="t-muted" font-size="9" text-anchor="middle">:8082</text>
+          <text data-node-label="" data-detail-anchor="" x="715" y="286" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Cart Service</text>
+        <text data-detail="context" x="715" y="302" class="t-muted" font-size="9" text-anchor="middle">8082</text>
         </g>
 
-        <g id="node-postgres" data-node-id="postgres" data-node-label="PostgreSQL" tabindex="0" role="button" aria-label="Focus PostgreSQL, mi_db :5432, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="mi_db :5432" data-node-context="Architecture component">
-          <title>PostgreSQL · mi_db :5432 · Architecture component</title>
-          <rect x="760" y="20" width="150" height="60" rx="6" class="c-mask"/>
-          <rect x="760" y="20" width="150" height="60" rx="6" class="c-database" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(766 26) scale(0.6875)">
+        <g id="node-mongo" data-node-id="mongo" data-node-label="MongoDB" tabindex="0" role="button" aria-label="Focus MongoDB, supermarket_cart, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="database" data-node-sublabel="supermarket_cart" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>MongoDB · supermarket_cart · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="900" y="240" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="900" y="240" width="120" height="50" rx="6" class="c-database" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(906 246) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="835" y="48" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">PostgreSQL</text>
-        <text data-detail="context" x="835" y="64" class="t-muted" font-size="9" text-anchor="middle">mi_db :5432</text>
+          <text data-node-label="" data-detail-anchor="" x="960" y="263" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MongoDB</text>
+        <text data-detail="context" x="960" y="279" class="t-muted" font-size="9" text-anchor="middle">supermarket_cart</text>
         </g>
 
-        <g id="node-redis" data-node-id="redis" data-node-label="Redis" tabindex="0" role="button" aria-label="Focus Redis, cache :6379, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="cache :6379" data-node-context="Architecture component">
-          <title>Redis · cache :6379 · Architecture component</title>
-          <rect x="760" y="150" width="150" height="60" rx="6" class="c-mask"/>
-          <rect x="760" y="150" width="150" height="60" rx="6" class="c-database" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(766 156) scale(0.6875)">
-            <ellipse cx="8" cy="4" rx="5" ry="2"/>
-            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="835" y="178" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Redis</text>
-        <text data-detail="context" x="835" y="194" class="t-muted" font-size="9" text-anchor="middle">cache :6379</text>
-        </g>
-
-        <g id="node-mongo" data-node-id="mongo" data-node-label="MongoDB" tabindex="0" role="button" aria-label="Focus MongoDB, supermarket_cart :27017, Architecture component" aria-pressed="false" data-node-kind="database" data-node-sublabel="supermarket_cart :27017" data-node-context="Architecture component">
-          <title>MongoDB · supermarket_cart :27017 · Architecture component</title>
-          <rect x="760" y="360" width="160" height="60" rx="6" class="c-mask"/>
-          <rect x="760" y="360" width="160" height="60" rx="6" class="c-database" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(766 366) scale(0.6875)">
-            <ellipse cx="8" cy="4" rx="5" ry="2"/>
-            <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="840" y="388" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">MongoDB</text>
-        <text data-detail="context" x="840" y="404" class="t-muted" font-size="9" text-anchor="middle">supermarket_cart :27017</text>
-        </g>
-
-        <g id="node-rabbitmq" data-node-id="rabbitmq" data-node-label="RabbitMQ" tabindex="0" role="button" aria-label="Focus RabbitMQ, orders-queue, Architecture component" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="orders-queue" data-node-context="Architecture component">
-          <title>RabbitMQ · orders-queue · Architecture component</title>
-          <rect x="760" y="500" width="150" height="60" rx="6" class="c-mask"/>
-          <rect x="760" y="500" width="150" height="60" rx="6" class="c-messagebus" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(766 506) scale(0.6875)">
+        <g id="node-rabbitmq" data-node-id="rabbitmq" data-node-label="RabbitMQ" tabindex="0" role="button" aria-label="Focus RabbitMQ, orders-queue, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="messagebus" data-node-sublabel="orders-queue" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>RabbitMQ · orders-queue · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="900" y="306" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="900" y="306" width="120" height="50" rx="6" class="c-messagebus" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="messagebus" class="semantic-sigil s-messagebus" transform="translate(906 312) scale(0.6875)">
             <path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/>
             <circle cx="5" cy="4.5" r="1" class="sigil-fill"/>
             <circle cx="10.5" cy="8" r="1" class="sigil-fill"/>
             <circle cx="7" cy="11.5" r="1" class="sigil-fill"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="835" y="528" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RabbitMQ</text>
-        <text data-detail="context" x="835" y="544" class="t-muted" font-size="9" text-anchor="middle">orders-queue</text>
+          <text data-node-label="" data-detail-anchor="" x="960" y="329" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">RabbitMQ</text>
+        <text data-detail="context" x="960" y="345" class="t-muted" font-size="9" text-anchor="middle">orders-queue</text>
         </g>
 
-        <g id="node-delivery" data-node-id="delivery" data-node-label="Delivery Service" tabindex="0" role="button" aria-label="Focus Delivery Service, :8083 · sin REST, Architecture component" aria-pressed="false" data-node-kind="backend" data-node-sublabel=":8083 · sin REST" data-node-context="Architecture component">
-          <title>Delivery Service · :8083 · sin REST · Architecture component</title>
-          <rect x="1000" y="500" width="170" height="64" rx="6" class="c-mask"/>
-          <rect x="1000" y="500" width="170" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(1006 506) scale(0.6875)">
+        <g id="node-delivery" data-node-id="delivery" data-node-label="Delivery Service" tabindex="0" role="button" aria-label="Focus Delivery Service, 8083 · consumer puro, Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="8083 · consumer puro" data-node-context="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <title>Delivery Service · 8083 · consumer puro · Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</title>
+          <rect x="1140" y="260" width="160" height="56" rx="6" class="c-mask"/>
+          <rect x="1140" y="260" width="160" height="56" rx="6" class="c-backend" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(1146 266) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1085" y="530" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Delivery Service</text>
-        <text data-detail="context" x="1085" y="546" class="t-muted" font-size="9" text-anchor="middle">:8083 · sin REST</text>
+          <text data-node-label="" data-detail-anchor="" x="1220" y="286" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Delivery Service</text>
+        <text data-detail="context" x="1220" y="302" class="t-muted" font-size="9" text-anchor="middle">8083 · consumer puro</text>
+        </g>
+
+        <g id="node-prometheus" data-node-id="prometheus" data-node-label="Prometheus" tabindex="0" role="button" aria-label="Focus Prometheus, Observabilidad" aria-pressed="false" data-node-kind="external" data-node-context="Observabilidad">
+          <title>Prometheus · Observabilidad</title>
+          <rect x="355" y="440" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="355" y="440" width="120" height="50" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(361 446) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" x="415" y="469" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Prometheus</text>
+        </g>
+
+        <g id="node-promtail" data-node-id="promtail" data-node-label="Promtail" tabindex="0" role="button" aria-label="Focus Promtail, Observabilidad" aria-pressed="false" data-node-kind="external" data-node-context="Observabilidad">
+          <title>Promtail · Observabilidad</title>
+          <rect x="640" y="440" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="640" y="440" width="120" height="50" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(646 446) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" x="700" y="469" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Promtail</text>
+        </g>
+
+        <g id="node-loki" data-node-id="loki" data-node-label="Loki" tabindex="0" role="button" aria-label="Focus Loki, Observabilidad" aria-pressed="false" data-node-kind="external" data-node-context="Observabilidad">
+          <title>Loki · Observabilidad</title>
+          <rect x="840" y="440" width="100" height="50" rx="6" class="c-mask"/>
+          <rect x="840" y="440" width="100" height="50" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(846 446) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" x="890" y="469" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Loki</text>
+        </g>
+
+        <g id="node-grafana" data-node-id="grafana" data-node-label="Grafana" tabindex="0" role="button" aria-label="Focus Grafana, Observabilidad" aria-pressed="false" data-node-kind="external" data-node-context="Observabilidad">
+          <title>Grafana · Observabilidad</title>
+          <rect x="980" y="440" width="120" height="50" rx="6" class="c-mask"/>
+          <rect x="980" y="440" width="120" height="50" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(986 446) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" x="1040" y="469" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Grafana</text>
+        </g>
+
+        <g id="node-zipkin" data-node-id="zipkin" data-node-label="Zipkin" tabindex="0" role="button" aria-label="Focus Zipkin, Observabilidad" aria-pressed="false" data-node-kind="external" data-node-context="Observabilidad">
+          <title>Zipkin · Observabilidad</title>
+          <rect x="1140" y="440" width="100" height="50" rx="6" class="c-mask"/>
+          <rect x="1140" y="440" width="100" height="50" rx="6" class="c-external" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(1146 446) scale(0.6875)">
+            <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
+            <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
+          </g>
+          <text data-node-label="" x="1190" y="469" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Zipkin</text>
         </g>
 
         <!-- Connection labels -->
-        <g data-detail="context" data-edge-from="client" data-edge-to="gateway" data-edge-label="HTTPS" data-edge-key="0" data-edge-id="client-gateway">
-          <rect x="188" y="270" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="205" y="280" class="t-backend" font-size="8" text-anchor="middle">HTTPS</text>
+        <g data-detail="context" data-edge-from="user" data-edge-to="gateway" data-edge-label="1. POST /auth/login" data-edge-key="0">
+          <rect x="196.9" y="76" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="247.5" y="86" class="t-backend" font-size="8" text-anchor="middle">1. POST /auth/login</text>
         </g>
-        <g data-detail="context" data-edge-from="gateway" data-edge-to="product" data-edge-label="/api/products/**" data-edge-key="1" data-edge-id="gateway-product">
-          <rect x="359.6" y="214" width="86.8" height="14" rx="3" class="c-mask"/>
-          <text x="403" y="224" class="t-muted" font-size="8" text-anchor="middle">/api/products/**</text>
+        <g data-detail="context" data-edge-from="gateway" data-edge-to="user" data-edge-label="Access token (5 min, JSON) + refresh cookie (7d, HttpOnly)" data-edge-key="1">
+          <rect x="103.30000000000001" y="232" width="288.4" height="14" rx="3" class="c-mask"/>
+          <text x="247.5" y="242" class="t-messagebus" font-size="8" text-anchor="middle">Access token (5 min, JSON) + refresh cookie (7d, HttpOnly)</text>
         </g>
-        <g data-detail="context" data-edge-from="gateway" data-edge-to="cart" data-edge-label="/api/cart/**" data-edge-key="2" data-edge-id="gateway-cart">
-          <rect x="369.2" y="332" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="403" y="342" class="t-muted" font-size="8" text-anchor="middle">/api/cart/**</text>
+        <g data-detail="context" data-edge-from="user" data-edge-to="gateway" data-edge-label="2. Bearer access token" data-edge-key="2">
+          <rect x="182.2" y="150.5" width="115.6" height="14" rx="3" class="c-mask"/>
+          <text x="240" y="160.5" class="t-backend" font-size="8" text-anchor="middle">2. Bearer access token</text>
         </g>
-        <g data-detail="context" data-edge-from="product" data-edge-to="postgres" data-edge-label="JPA" data-edge-key="3" data-edge-id="product-postgres">
-          <rect x="695" y="62.5" width="30" height="14" rx="3" class="c-mask"/>
-          <text x="710" y="72.5" class="t-muted" font-size="8" text-anchor="middle">JPA</text>
+        <g data-detail="context" data-edge-from="gateway" data-edge-to="product" data-edge-label="3. Valida RSA + agrega X-Gateway-Secret" data-edge-key="3">
+          <rect x="466.4" y="102" width="197.2" height="14" rx="3" class="c-mask"/>
+          <text x="565" y="112" class="t-security" font-size="8" text-anchor="middle">3. Valida RSA + agrega X-Gateway-Secret</text>
         </g>
-        <g data-detail="context" data-edge-from="product" data-edge-to="redis" data-edge-label="cache 10 min" data-edge-key="4" data-edge-id="product-redis">
-          <rect x="676.2" y="134.5" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="710" y="144.5" class="t-muted" font-size="8" text-anchor="middle">cache 10 min</text>
+        <g data-detail="context" data-edge-from="gateway" data-edge-to="cart" data-edge-label="3. Valida RSA + agrega X-Gateway-Secret" data-edge-key="4">
+          <rect x="466.4" y="219" width="197.2" height="14" rx="3" class="c-mask"/>
+          <text x="565" y="229" class="t-security" font-size="8" text-anchor="middle">3. Valida RSA + agrega X-Gateway-Secret</text>
         </g>
-        <g data-detail="context" data-edge-from="cart" data-edge-to="mongo" data-edge-label="Spring Data MongoDB" data-edge-key="5" data-edge-id="cart-mongo">
-          <rect x="659.4" y="402.5" width="101.2" height="14" rx="3" class="c-mask"/>
-          <text x="710" y="412.5" class="t-muted" font-size="8" text-anchor="middle">Spring Data MongoDB</text>
+        <g data-detail="context" data-edge-from="product" data-edge-to="redis" data-edge-label="cache-aside · TTL 10 min" data-edge-key="5">
+          <rect x="782.4" y="160" width="125.19999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="845" y="170" class="t-muted" font-size="8" text-anchor="middle">cache-aside · TTL 10 min</text>
         </g>
-        <g data-detail="context" data-edge-from="cart" data-edge-to="rabbitmq" data-edge-label="publish · checkout" data-edge-key="6" data-edge-id="cart-rabbitmq">
-          <rect x="661.8" y="479.5" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
-          <text x="710" y="489.5" class="t-messagebus" font-size="8" text-anchor="middle">publish · checkout</text>
+        <g data-detail="context" data-edge-from="product" data-edge-to="postgres" data-edge-label="JPA persist" data-edge-key="6">
+          <rect x="813.6" y="48" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="845" y="58" class="t-muted" font-size="8" text-anchor="middle">JPA persist</text>
         </g>
-        <g data-detail="context" data-edge-from="rabbitmq" data-edge-to="delivery" data-edge-label="consume · 3 listeners" data-edge-key="7" data-edge-id="rabbitmq-delivery">
-          <rect x="899.6" y="486" width="110.8" height="14" rx="3" class="c-mask"/>
-          <text x="955" y="496" class="t-messagebus" font-size="8" text-anchor="middle">consume · 3 listeners</text>
+        <g data-detail="context" data-edge-from="cart" data-edge-to="mongo" data-edge-label="persiste documento" data-edge-key="7">
+          <rect x="796.8" y="256.5" width="96.39999999999999" height="14" rx="3" class="c-mask"/>
+          <text x="845" y="266.5" class="t-muted" font-size="8" text-anchor="middle">persiste documento</text>
+        </g>
+        <g data-detail="context" data-edge-from="cart" data-edge-to="rabbitmq" data-edge-label="4. publish → orders-queue" data-edge-key="8">
+          <rect x="780" y="226" width="130" height="14" rx="3" class="c-mask"/>
+          <text x="845" y="236" class="t-muted" font-size="8" text-anchor="middle">4. publish → orders-queue</text>
+        </g>
+        <g data-detail="context" data-edge-from="rabbitmq" data-edge-to="delivery" data-edge-label="5. consume async · 3 workers" data-edge-key="9">
+          <rect x="1007.8" y="226" width="144.4" height="14" rx="3" class="c-mask"/>
+          <text x="1080" y="236" class="t-messagebus" font-size="8" text-anchor="middle">5. consume async · 3 workers</text>
+        </g>
+        <g data-detail="context" data-edge-from="prometheus" data-edge-to="gateway" data-edge-label="scrape /actuator/prometheus (los 4 servicios)" data-edge-key="10">
+          <rect x="309" y="494" width="226" height="14" rx="3" class="c-mask"/>
+          <text x="422" y="504" class="t-muted" font-size="8" text-anchor="middle">scrape /actuator/prometheus (los 4 servicios)</text>
+        </g>
+        <g data-detail="context" data-edge-from="cart" data-edge-to="promtail" data-edge-label="logs JSON (los 4 servicios)" data-edge-key="11">
+          <rect x="679.7" y="320" width="139.6" height="14" rx="3" class="c-mask"/>
+          <text x="749.5" y="330" class="t-messagebus" font-size="8" text-anchor="middle">logs JSON (los 4 servicios)</text>
+        </g>
+        <g data-detail="context" data-edge-from="delivery" data-edge-to="zipkin" data-edge-label="trace spans · 100% sampling (los 4 servicios)" data-edge-key="12">
+          <rect x="1092" y="358" width="226" height="14" rx="3" class="c-mask"/>
+          <text x="1205" y="368" class="t-messagebus" font-size="8" text-anchor="middle">trace spans · 100% sampling (los 4 servicios)</text>
         </g>
 
+
+
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="security-group" data-composition-frame-label="GatewayAccessFilter: requiere X-Gateway-Secret">
-          <rect data-graph-role="structural-frame-label-mask" x="467.2709539419355" y="70" width="225.45809211612905" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="471.2709539419355" y="81.80645261290323" class="t-security" font-size="7.806452612903227" font-weight="600">GatewayAccessFilter: requiere X-Gateway-Secret</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="0" data-composition-frame-kind="security-group" data-composition-frame-label="Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)">
+          <rect data-graph-role="structural-frame-label-mask" x="320" y="20" width="398.8" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="324" y="33" class="t-security" font-size="9" font-weight="600">Red interna · Docker bridge (GatewayAccessFilter bloquea acceso directo)</text>
+        </g>
+
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="1" data-composition-frame-kind="region" data-composition-frame-label="Observabilidad">
+          <rect data-graph-role="structural-frame-label-mask" x="343" y="420" width="85.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="347" y="433" class="t-cloud" font-size="9" font-weight="600">Observabilidad</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="40" y="596" class="t-primary" font-size="12" font-weight="650">Legend</text>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="40" data-legend-baseline="616" data-legend-width="78">
-            <rect x="40" y="607" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="62" y="616" class="t-muted" font-size="10" font-weight="500">Backend</text>
+          <text x="40" y="542" class="t-primary" font-size="12" font-weight="650">Legend</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="40" data-legend-baseline="562" data-legend-width="78">
+            <rect x="40" y="553" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
+            <text x="62" y="562" class="t-muted" font-size="10" font-weight="500">Backend</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="140" data-legend-baseline="616" data-legend-width="83">
-            <rect x="140" y="607" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="162" y="616" class="t-muted" font-size="10" font-weight="500">Database</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="140" data-legend-baseline="562" data-legend-width="83">
+            <rect x="140" y="553" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
+            <text x="162" y="562" class="t-muted" font-size="10" font-weight="500">Database</text>
           </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="245" data-legend-baseline="616" data-legend-width="83">
-            <rect x="245" y="607" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
-            <text x="267" y="616" class="t-muted" font-size="10" font-weight="500">Security</text>
+          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="245" data-legend-baseline="562" data-legend-width="83">
+            <rect x="245" y="553" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
+            <text x="267" y="562" class="t-muted" font-size="10" font-weight="500">Security</text>
           </g>
-          <g data-legend-semantic-kind="messagebus" data-legend-kind="messagebus" data-legend-label="Message bus" data-legend-x="350" data-legend-baseline="616" data-legend-width="98">
-            <rect x="350" y="607" width="16" height="10" rx="2.5" class="c-messagebus" stroke-width="1"/>
-            <text x="372" y="616" class="t-muted" font-size="10" font-weight="500">Message bus</text>
+          <g data-legend-semantic-kind="messagebus" data-legend-kind="messagebus" data-legend-label="Message bus" data-legend-x="350" data-legend-baseline="562" data-legend-width="98">
+            <rect x="350" y="553" width="16" height="10" rx="2.5" class="c-messagebus" stroke-width="1"/>
+            <text x="372" y="562" class="t-muted" font-size="10" font-weight="500">Message bus</text>
           </g>
-          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="470" data-legend-baseline="616" data-legend-width="83">
-            <rect x="470" y="607" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
-            <text x="492" y="616" class="t-muted" font-size="10" font-weight="500">External</text>
+          <g data-legend-semantic-kind="external" data-legend-kind="external" data-legend-label="External" data-legend-x="470" data-legend-baseline="562" data-legend-width="83">
+            <rect x="470" y="553" width="16" height="10" rx="2.5" class="c-external" stroke-width="1"/>
+            <text x="492" y="562" class="t-muted" font-size="10" font-weight="500">External</text>
           </g>
         </g>
       </svg>
@@ -5533,9 +5622,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Seguridad</h3>
         </div>
         <ul>
-          <li>&bull; JWT firmado con RSA; AuthController expone /auth/login y /auth/refresh</li>
-          <li>&bull; Access token 1h · Refresh token 7d (cookies HttpOnly, Secure, SameSite=Strict)</li>
-          <li>&bull; GatewayAccessFilter bloquea llamadas directas sin X-Gateway-Secret</li>
+          <li>&bull; JWT RSA en AuthController (/auth/login, /auth/refresh)</li>
+          <li>&bull; Access token 5 min · Refresh 7d (HttpOnly, SameSite=Strict)</li>
+          <li>&bull; GatewayAccessFilter exige X-Gateway-Secret</li>
         </ul>
       </div>
 
@@ -5545,8 +5634,8 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Datos</h3>
         </div>
         <ul>
-          <li>&bull; PostgreSQL (mi_db) vía JPA para productos</li>
-          <li>&bull; Redis cachea productos 10 min (TTL default 60 min)</li>
+          <li>&bull; PostgreSQL (mi_db) vía JPA</li>
+          <li>&bull; Redis cachea 10 min (TTL default 60 min)</li>
           <li>&bull; MongoDB (supermarket_cart) para carritos</li>
         </ul>
       </div>
@@ -5557,10 +5646,21 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
           <h3>Asíncrono y Observabilidad</h3>
         </div>
         <ul>
-          <li>&bull; Checkout publica en RabbitMQ (orders-queue)</li>
-          <li>&bull; Delivery Service consume con 3 listeners concurrentes, ~2s por orden</li>
-          <li>&bull; Todos los servicios exponen /actuator/prometheus</li>
-          <li>&bull; Tracing: Micrometer + Brave → Zipkin, 100% sampling</li>
+          <li>&bull; RabbitMQ → Delivery, 3 workers, ~2s/orden</li>
+          <li>&bull; Prometheus scrapea /actuator/prometheus</li>
+          <li>&bull; Zipkin (100%) · Promtail → Loki → Grafana</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-dot violet"></div>
+          <h3>Historia · Black Friday con Juan</h3>
+        </div>
+        <ul>
+          <li>&bull; RSA sella; Redis responde antes que Postgres</li>
+          <li>&bull; Checkout publica y responde al instante</li>
+          <li>&bull; Zipkin traza todo el pedido</li>
         </ul>
       </div>
     </div>

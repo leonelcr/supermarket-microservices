@@ -21,6 +21,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
+// Prueba las respuestas de login y refresh del controlador de autenticación.
+// Usa un JwtUtils simulado para aislar el comportamiento de los controladores.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("AuthController - Tests Unitarios")
 class AuthControllerTest {

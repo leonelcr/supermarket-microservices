@@ -20,6 +20,8 @@ import java.util.Locale;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
+// Integra el API Gateway con servidores WireMock de prueba. Verifica rutas,
+// encabezados secretos y la aceptación o rechazo de JWTs sin usar servicios externos.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
 @DisplayName("API Gateway - Tests de Ruteo con WireMock")

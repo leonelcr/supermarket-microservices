@@ -12,6 +12,8 @@ import java.util.Locale;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.mockito.Mockito.verify;
 
+// Prueba el consumidor de RabbitMQ. Comprueba que procesa mensajes válidos,
+// vacíos y que invoca correctamente el método de recepción.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("OrderListener - Tests Unitarios")
 class OrderListenerTest {

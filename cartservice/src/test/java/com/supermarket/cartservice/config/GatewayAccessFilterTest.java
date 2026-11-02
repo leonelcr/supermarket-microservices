@@ -17,6 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+// Valida el filtro de acceso del servicio de carrito, incluyendo el header
+// secreto y las rutas de Actuator que no requieren ese header.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("GatewayAccessFilter (cartservice) - Tests Unitarios")
 class GatewayAccessFilterTest {

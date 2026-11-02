@@ -21,6 +21,8 @@ import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.*;
 
+// Comprueba la generación, lectura, validación y expiración de JWTs RSA.
+// Genera una pareja de claves real en memoria para probar el comportamiento real.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("JwtUtils - Tests Unitarios")
 class JwtUtilsTest {

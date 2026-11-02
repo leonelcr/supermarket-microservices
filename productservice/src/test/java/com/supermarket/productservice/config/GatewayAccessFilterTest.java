@@ -17,6 +17,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+// Valida el filtro de acceso del servicio de productos. Comprueba qué peticiones
+// tienen el header secreto y qué rutas públicas se permiten sin autenticación.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("GatewayAccessFilter - Tests Unitarios")
 class GatewayAccessFilterTest {

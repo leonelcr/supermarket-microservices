@@ -22,6 +22,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+// Prueba de corte del controlador de carrito. Procesa las peticiones HTTP y
+// sustituye CartService para evitar depender de MongoDB y RabbitMQ.
 @WebMvcTest(CartController.class)
 @DisplayName("CartController - Slice Tests (@WebMvcTest)")
 class CartControllerTest {

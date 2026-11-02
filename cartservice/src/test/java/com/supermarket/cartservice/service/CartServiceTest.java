@@ -22,6 +22,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
+// Prueba el servicio de carrito con repositorio y RabbitMQ simulados. Verifica
+// la creación, actualización, cierre y publicación de compras.
 @ExtendWith(MockitoExtension.class)
 @DisplayName("CartService - Tests Unitarios")
 class CartServiceTest {
